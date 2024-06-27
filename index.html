@@ -10,7 +10,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 100h;
             margin: 0;
             background-color: #f0f0f0;
         }
@@ -97,8 +97,8 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             
-            return array;
-        }
+            return array;}
+            }       
 
         // Function to display images and names
         function displayImages() {
@@ -142,12 +142,11 @@
             <h2>Your Favorite Kit:</h2>
             <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
             <p>${currentRound[0].name}</p>
-        `;
     }
 
     // Initialize the quiz when the window loads
     window.onload = () => {
-        const quizContainer = document.getElementById('quiz-container');
+        const quizContainer = document.getElementById('quiz-container');}
         try {
             displayImages(); // Start displaying images
         } catch (error) {
