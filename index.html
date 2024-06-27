@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Men's Euros 2024: The Big Kit Off"</title>
+    <title>Image Preference Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,31 +11,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100h;
+            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
         }
         #quiz-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1000px;
-            margin-top: 20px;
+            text-align: center;
         }
-        .kit-image {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
+        #quiz-container img {
+            max-width: 300px;
+            margin: 10px;
         }
-        .kit-name {
-            margin-top: 10px;
-            font-size: 14px;
+        #quiz-container button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
         }
     </style>
-    
-    <body>
+</head>
+<body>
     <div id="quiz-container"></div>
     <script>
         const images = [
