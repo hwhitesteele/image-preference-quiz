@@ -49,99 +49,80 @@
 
     <script>
         const images = [
-           'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Albania Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'Albania Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'Austria Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg', name: 'Austria Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg', name: 'Belgium Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg', name: 'Belgium Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg', name: 'Croatia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg', name: 'Croatia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg', name: 'Czechia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg', name: 'Czechia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg', name: 'Denmark Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg', name: 'Denmark Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg', name: 'England Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg', name: 'England Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg', name: 'France Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg', name: 'France Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg', name: 'Georgia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg', name: 'Georgia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg', name: 'Germany Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg', name: 'Germany Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg', name: 'Hungary Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg', name: 'Hungary Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg', name: 'Italy Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg', name: 'Italy Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg', name: 'The Netherlands Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg', name: 'The Netherlands Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg', name: 'Poland Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg', name: 'Poland Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg', name: 'Portugal Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg', name: 'Portugal Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg', name: 'Romania Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg', name: 'Romania Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg', name: 'Scotland Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg', name: 'Scotland Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg', name: 'Serbia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg', name: 'Serbia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg', name: 'Slovakia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg', name: 'Slovakia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg', name: 'Slovenia Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg', name: 'Slovenia Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg', name: 'Spain Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg', name: 'Spain Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg', name: 'Switzerland Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg', name: 'Switzerland Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg', name: 'Turkey Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg', name: 'Turkey Away' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg', name: 'Ukraine Home' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg', name: 'Ukraine Away' }
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Italy Kit' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'England Kit' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'France Kit' },
+            // Add more images as needed
         ];
 
         let currentRound = images.slice();
         let nextRound = [];
 
-        function showImages() {
-            if (currentRound.length === 1) {
-                showResult();
-                return;
-            }
+function showImages() {
+    if (currentRound.length === 1) {
+        showResult();
+        return;
+    }
 
-            if (currentRound.length === 0) {
-                currentRound = nextRound;
-                nextRound = [];
-            }
+    if (currentRound.length === 0) {
+        currentRound = nextRound;
+        nextRound = [];
+    }
 
-            if (currentRound.length >= 2) {
-                document.getElementById('quiz-container').innerHTML = `
-                    <div class="title">Men's Euro 2024: The Big Kit Off</div>
-                    <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
-                    <img src="${currentRound[1].src}" alt="${currentRound[1].name}" class="kit-image">
-                    <div>
-                        <button class="quiz-button" onclick="selectImage(0)">${currentRound[0].name}</button>
-                        <button class="quiz-button" onclick="selectImage(1)">${currentRound[1].name}</button>
-                    </div>
-                `;
-            } else {
-                console.error('Unexpected state: less than 2 images in current round.');
-            }
-        }
+    if (currentRound.length >= 2) {
+        // Shuffle current round images before displaying
+        shuffle(currentRound);
+
+        const quizContainer = document.getElementById('quiz-container');
+        quizContainer.innerHTML = ''; // Clear previous content
+
+        // Add title above images
+        quizContainer.insertAdjacentHTML('beforeend', `<div class="title">Men's Euro 2024: The Big Kit Off</div>`);
+
+        // Display images and buttons
+        currentRound.slice(0, 2).forEach((image, index) => {
+            const imageElement = document.createElement('img');
+            imageElement.src = image.src;
+            imageElement.alt = image.name;
+            imageElement.classList.add('kit-image');
+            quizContainer.appendChild(imageElement);
+
+            const button = document.createElement('button');
+            button.textContent = image.name;
+            button.classList.add('quiz-button');
+            button.onclick = () => selectImage(index);
+            quizContainer.appendChild(button);
+        });
+    } else {
+        console.error('Unexpected state: less than 2 images in current round.');
+    }
+}
 
         function selectImage(index) {
             nextRound.push(currentRound[index]);
-            currentRound.splice(index, 1);
-            currentRound.splice(0, 1);
+            currentRound = currentRound.slice(2);
             showImages();
         }
 
         function showResult() {
-            document.getElementById('quiz-container').innerHTML = `
-                <div class="title">Men's Euro 2024: The Big Kit Off</div>
-                <h2>Your Favorite Image:</h2>
-                <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
-                <p class="kit-name">${currentRound[0].name}</p>
-            `;
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear previous content
+
+            // Add title above result
+            quizContainer.insertAdjacentHTML('beforeend', `<div class="title">Men's Euro 2024: The Big Kit Off</div>`);
+
+            // Display favorite image
+            const favoriteImage = currentRound[0];
+            const imageElement = document.createElement('img');
+            imageElement.src = favoriteImage.src;
+            imageElement.alt = favoriteImage.name;
+            imageElement.classList.add('kit-image');
+            quizContainer.appendChild(imageElement);
+
+            const kitName = document.createElement('p');
+            kitName.textContent = favoriteImage.name;
+            kitName.classList.add('kit-name');
+            quizContainer.appendChild(kitName);
         }
 
         window.onload = () => {
@@ -155,4 +136,3 @@
     </script>
 </body>
 </html>
-
