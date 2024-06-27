@@ -38,7 +38,7 @@
     <div id="quiz-container"></div>
     <script>
         const images = [
-           { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Albania Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Albania Home' },
             { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'Albania Away' },
             { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'Austria Home' },
             { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg', name: 'Austria Away' },
@@ -109,55 +109,52 @@
             showImages(); // Display the first set of images
         }
 
-        // Function to show images in pairs and handle selection
-        function showImages() {
-            if (currentRound.length === 1) {
-                showResult(); // Show final result if only one image is left
-                return;
-            }
-
-            if (currentRound.length === 0) {
-                currentRound = nextRound; // Move to next round of images
-                nextRound = [];
-            }
-
-            if (currentRound.length >= 2) {
-                quizContainer.innerHTML = `
-                    <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
-                    <img src="${currentRound[1].src}" alt="${currentRound[1].name}" class="kit-image">
-                    <div>
-                        <button onclick="selectImage(0)">Select ${currentRound[0].name}</button>
-                        <button onclick="selectImage(1)">Select ${currentRound[1].name}</button>
-                    </div>
-                `;
-            } else {
-                console.error('Unexpected state: less than 2 images in current round.');
-            }
-        }// Function to handle image selection
-        function selectImage(index) {
-            nextRound.push(currentRound[index]); // Add selected image to next round
-            currentRound = currentRound.slice(2); // Remove selected images from current round
-            showImages(); // Display the next set of images
+        // Function to show images in
+        if (currentRound.length === 0) {
+            currentRound = nextRound; // Move to next round of images
+            nextRound = [];
         }
 
-        // Function to show final selected image
-        function showResult() {
+        if (currentRound.length >= 2) {
             quizContainer.innerHTML = `
-                <h2>Your Favorite Kit:</h2>
                 <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
-                <p>${currentRound[0].name}</p>
+                <img src="${currentRound[1].src}" alt="${currentRound[1].name}" class="kit-image">
+                <div>
+                    <button onclick="selectImage(0)">Select ${currentRound[0].name}</button>
+                    <button onclick="selectImage(1)">Select ${currentRound[1].name}</button>
+                </div>
             `;
+        } else {
+            console.error('Unexpected state: less than 2 images in current round.');
         }
+    }
 
-        // Initialize the quiz when the window loads
-        window.onload = () => {
-            try {
-                displayImages(); // Start displaying images
-            } catch (error) {
-                console.error("Error initializing the quiz:", error);
-                quizContainer.innerHTML = "<p>There was an error loading the quiz. Please try again later.</p>";
-            }
-        };
-    </script>
+    // Function to handle image selection
+    function selectImage(index) {
+        nextRound.push(currentRound[index]); // Add selected image to next round
+        currentRound = currentRound.slice(2); // Remove selected images from current round
+        showImages(); // Display the next set of images
+    }
+
+    // Function to show final selected image
+    function showResult() {
+        quizContainer.innerHTML = `
+            <h2>Your Favorite Kit:</h2>
+            <img src="${currentRound[0].src}" alt="${currentRound[0].name}" class="kit-image">
+            <p>${currentRound[0].name}</p>
+        `;
+    }
+
+    // Initialize the quiz when the window loads
+    window.onload = () => {
+        const quizContainer = document.getElementById('quiz-container');
+        try {
+            displayImages(); // Start displaying images
+        } catch (error) {
+            console.error("Error initializing the quiz:", error);
+            quizContainer.innerHTML = "<p>There was an error loading the quiz. Please try again later.</p>";
+        }
+    };
+</script>
 </body>
 </html>
