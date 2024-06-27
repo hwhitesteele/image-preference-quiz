@@ -112,3 +112,56 @@
             images.forEach(image => {
                 const imgElement = document.createElement('img');
                 img
+
+                        let currentRound = images.slice();
+        let nextRound = [];
+
+        function showImages() {
+            if (currentRound.length === 1) {
+                showResult();
+                return;
+            }
+
+            if (currentRound.length === 0) {
+                currentRound = nextRound;
+                nextRound = [];
+            }
+
+            if (currentRound.length >= 2) {
+                document.getElementById('quiz-container').innerHTML = `
+                    <img src="${currentRound[0]}" alt="Image 1">
+                    <img src="${currentRound[1]}" alt="Image 2">
+                    <div>
+                        <button onclick="selectImage(0)">Image 1</button>
+                        <button onclick="selectImage(1)">Image 2</button>
+                    </div>
+                `;
+            } else {
+                console.error('Unexpected state: less than 2 images in current round.');
+            }
+        }
+
+        function selectImage(index) {
+            nextRound.push(currentRound[index]);
+            currentRound = currentRound.slice(2);
+            showImages();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').innerHTML = `
+                <h2>Your Favorite Image:</h2>
+                <img src="${currentRound[0]}" alt="Favorite Image">
+            `;
+        }
+
+        window.onload = () => {
+            try {
+                showImages();
+            } catch (error) {
+                console.error("Error initializing the quiz:", error);
+                document.getElementById('quiz-container').innerHTML = "<p>There was an error loading the quiz. Please try again later.</p>";
+            }
+        };
+    </script>
+</body>
+</html>
