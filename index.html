@@ -85,7 +85,6 @@
         let currentRound = [];
         let nextRound = [];
 
-        // Shuffle function
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -94,7 +93,6 @@
             return array;}
             }       
 
-        // Function to display images and names
         function displayImages() {
             const quizContainer = document.getElementById('quiz-container');
             shuffle(images); // Shuffle images array
@@ -103,7 +101,6 @@
             showImages(); // Display the first set of images
         }
 
-        // Function to show images in
         if (currentRound.length === 0) {
             currentRound = nextRound; // Move to next round of images
             nextRound = [];
@@ -123,11 +120,10 @@
         }
     
 
-    // Function to handle image selection
     function selectImage(index) {
-        nextRound.push(currentRound[index]); // Add selected image to next round
-        currentRound = currentRound.slice(2); // Remove selected images from current round
-        showImages(); // Display the next set of images
+        nextRound.push(currentRound[index]); 
+        currentRound = currentRound.slice(2); 
+        showImages(); 
     }
 
     // Function to show final selected image
@@ -138,7 +134,6 @@
             <p>${currentRound[0].name}</p>
     }
 
-    // Initialize the quiz when the window loads
     window.onload = () => {
         const quizContainer = document.getElementById('quiz-container');}
         try {
