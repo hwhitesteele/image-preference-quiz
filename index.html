@@ -93,4 +93,35 @@
 
             if (currentRound.length === 0) {
                 // Move to the next round
-                currentRound = nextRound
+                currentRound = nextRound;
+                nextRound = [];
+            }
+
+            document.getElementById('quiz-container').innerHTML = `
+                <img src="${currentRound[0]}" alt="Image 1">
+                <img src="${currentRound[1]}" alt="Image 2">
+                <div>
+                    <button onclick="selectImage(0)">Image 1</button>
+                    <button onclick="selectImage(1)">Image 2</button>
+                </div>
+            `;
+        }
+
+        function selectImage(index) {
+            nextRound.push(currentRound[index]);
+            currentRound = currentRound.slice(2);
+            showImages();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').innerHTML = `
+                <h2>Your Favorite Image:</h2>
+                <img src="${currentRound[0]}" alt="Favorite Image">
+            `;
+        }
+
+        showImages();
+    </script>
+</body>
+</html>
+
