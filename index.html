@@ -49,90 +49,112 @@
 
     <script>
         const images = [
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Italy Kit' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'England Kit' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'France Kit' },
-            // Add more images as needed
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Italy Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'England Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'France Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg', name: 'Germany Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg', name: 'Spain Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg', name: 'Portugal Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg', name: 'Netherlands Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg', name: 'Belgium Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg', name: 'Switzerland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg', name: 'Sweden Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg', name: 'Denmark Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg', name: 'Norway Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg', name: 'Finland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg', name: 'Russia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg', name: 'Ukraine Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg', name: 'Poland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg', name: 'Czech Republic Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg', name: 'Austria Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg', name: 'Greece Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg', name: 'Turkey Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg', name: 'Iceland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg', name: 'Scotland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg', name: 'Wales Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg', name: 'Ireland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg', name: 'Northern Ireland Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg', name: 'Hungary Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg', name: 'Slovakia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg', name: 'Croatia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg', name: 'Serbia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg', name: 'Bosnia and Herzegovina Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg', name: 'Montenegro Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg', name: 'Albania Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg', name: 'Macedonia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg', name: 'Bulgaria Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg', name: 'Romania Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg', name: 'Moldova Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg', name: 'Estonia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg', name: 'Latvia Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg', name: 'Lithuania Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg', name: 'Belarus Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg', name: 'Luxembourg Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg', name: 'Cyprus Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg', name: 'Malta Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg', name: 'San Marino Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg', name: 'Andorra Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg', name: 'Liechtenstein Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg', name: 'Monaco Kit'},
+            {src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg', name: 'Vatican City Kit'}
         ];
 
         let currentRound = images.slice();
         let nextRound = [];
 
-function showImages() {
-    if (currentRound.length === 1) {
-        showResult();
-        return;
-    }
+        // Shuffle function
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
-    if (currentRound.length === 0) {
-        currentRound = nextRound;
-        nextRound = [];
-    }
+        function showImages() {
+            if (currentRound.length === 0) {
+                showResult();
+                return;
+            }
 
-    if (currentRound.length >= 2) {
-        // Shuffle current round images before displaying
-        shuffle(currentRound);
+            // Shuffle images for current round
+            shuffle(currentRound);
 
-        const quizContainer = document.getElementById('quiz-container');
-        quizContainer.innerHTML = ''; // Clear previous content
+            // Take the first 4 images for display
+            const roundImages = currentRound.slice(0, 4);
 
-        // Add title above images
-        quizContainer.insertAdjacentHTML('beforeend', `<div class="title">Men's Euro 2024: The Big Kit Off</div>`);
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = '';
 
-        // Display images and buttons
-        currentRound.slice(0, 2).forEach((image, index) => {
-            const imageElement = document.createElement('img');
-            imageElement.src = image.src;
-            imageElement.alt = image.name;
-            imageElement.classList.add('kit-image');
-            quizContainer.appendChild(imageElement);
+            roundImages.forEach(image => {
+                const kitDiv = document.createElement('div');
+                kitDiv.classList.add('kit-item');
 
-            const button = document.createElement('button');
-            button.textContent = image.name;
-            button.classList.add('quiz-button');
-            button.onclick = () => selectImage(index);
-            quizContainer.appendChild(button);
-        });
-    } else {
-        console.error('Unexpected state: less than 2 images in current round.');
-    }
-}
+                const kitImage = document.createElement('img');
+                kitImage.src = image.src;
+                kitImage.alt = image.name;
+                kitImage.classList.add('kit-image');
+                kitDiv.appendChild(kitImage);
 
-        function selectImage(index) {
-            nextRound.push(currentRound[index]);
-            currentRound = currentRound.slice(2);
-            showImages();
+                const kitName = document.createElement('div');
+                kitName.textContent = image.name;
+                kitName.classList.add('kit-name');
+                kitDiv.appendChild(kitName);
+
+                quizContainer.appendChild(kitDiv);
+            });
+
+            // Update currentRound to exclude displayed images
+            currentRound = currentRound.slice(4);
         }
 
         function showResult() {
             const quizContainer = document.getElementById('quiz-container');
-            quizContainer.innerHTML = ''; // Clear previous content
-
-            // Add title above result
-            quizContainer.insertAdjacentHTML('beforeend', `<div class="title">Men's Euro 2024: The Big Kit Off</div>`);
-
-            // Display favorite image
-            const favoriteImage = currentRound[0];
-            const imageElement = document.createElement('img');
-            imageElement.src = favoriteImage.src;
-            imageElement.alt = favoriteImage.name;
-            imageElement.classList.add('kit-image');
-            quizContainer.appendChild(imageElement);
-
-            const kitName = document.createElement('p');
-            kitName.textContent = favoriteImage.name;
-            kitName.classList.add('kit-name');
-            quizContainer.appendChild(kitName);
+            quizContainer.innerHTML = '<div class="title">Quiz Completed!</div><p>Thanks for playing!</p>';
         }
 
-        window.onload = () => {
-            try {
-                showImages();
-            } catch (error) {
-                console.error("Error initializing the quiz:", error);
-                document.getElementById('quiz-container').innerHTML = "<p>There was an error loading the quiz. Please try again later.</p>";
-            }
-        };
+        // Initial load
+        showImages();
     </script>
 </body>
 </html>
