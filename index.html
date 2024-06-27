@@ -32,12 +32,18 @@
     <div id="quiz-container"></div>
     <script>
         const images = [
-            'images/image2.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg',
+            'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg',
             'images/image5.jpg', 'images/image6.jpg', 'images/image7.jpg', 'images/image8.jpg',
             'images/image9.jpg', 'images/image10.jpg', 'images/image11.jpg', 'images/image12.jpg',
             'images/image13.jpg', 'images/image14.jpg', 'images/image15.jpg', 'images/image16.jpg',
             'images/image17.jpg', 'images/image18.jpg', 'images/image19.jpg', 'images/image20.jpg',
-            'images/image21.jpg', 'images/image22.jpg', 'images/image23.jpg', 'images/image24.jpg'
+            'images/image21.jpg', 'images/image22.jpg', 'images/image23.jpg', 'images/image24.jpg',
+            'images/image25.jpg', 'images/image26.jpg', 'images/image27.jpg', 'images/image28.jpg',
+            'images/image29.jpg', 'images/image30.jpg', 'images/image31.jpg', 'images/image32.jpg',
+            'images/image33.jpg', 'images/image34.jpg', 'images/image35.jpg', 'images/image36.jpg',
+            'images/image37.jpg', 'images/image38.jpg', 'images/image39.jpg', 'images/image40.jpg',
+            'images/image41.jpg', 'images/image42.jpg', 'images/image43.jpg', 'images/image44.jpg',
+            'images/image45.jpg', 'images/image46.jpg', 'images/image47.jpg', 'images/image48.jpg'
         ];
 
         let currentIndex = 0;
@@ -79,84 +85,4 @@
     </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Preference Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #quiz-container {
-            text-align: center;
-        }
-        #quiz-container img {
-            max-width: 300px;
-            margin: 10px;
-        }
-        #quiz-container button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <div id="quiz-container"></div>
-    <script>
-        const images = [
-            'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg',
-            'images/image5.jpg', 'images/image6.jpg', 'images/image7.jpg', 'images/image8.jpg',
-            'images/image9.jpg', 'images/image10.jpg', 'images/image11.jpg', 'images/image12.jpg',
-            'images/image13.jpg', 'images/image14.jpg', 'images/image15.jpg', 'images/image16.jpg',
-            'images/image17.jpg', 'images/image18.jpg', 'images/image19.jpg', 'images/image20.jpg',
-            'images/image21.jpg', 'images/image22.jpg', 'images/image23.jpg', 'images/image24.jpg'
-        ];
 
-        let currentIndex = 0;
-        let imageScores = Array(images.length).fill(0);
-
-        function showImages() {
-            if (currentIndex >= images.length - 1) {
-                showResult();
-                return;
-            }
-
-            document.getElementById('quiz-container').innerHTML = `
-                <img src="${images[currentIndex]}" alt="Image 1">
-                <img src="${images[currentIndex + 1]}" alt="Image 2">
-                <div>
-                    <button onclick="selectImage(${currentIndex})">Image 1</button>
-                    <button onclick="selectImage(${currentIndex + 1})">Image 2</button>
-                </div>
-            `;
-        }
-
-        function selectImage(index) {
-            imageScores[index]++;
-            currentIndex += 2;
-            showImages();
-        }
-
-        function showResult() {
-            const maxScore = Math.max(...imageScores);
-            const favoriteImages = images.filter((_, index) => imageScores[index] === maxScore);
-
-            document.getElementById('quiz-container').innerHTML = `
-                <h2>Your Favorite Image(s):</h2>
-                ${favoriteImages.map(src => `<img src="${src}" alt="Favorite Image">`).join('')}
-            `;
-        }
-
-        showImages();
-    </script>
-</body>
-</html>
