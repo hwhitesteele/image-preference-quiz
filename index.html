@@ -17,12 +17,9 @@
         #quiz-container {
             text-align: center;
         }
-        .quiz-image {
-            width: 300px; /* Set a fixed width for all images */
-            height: 300px; /* Set a fixed height for all images */
-            object-fit: cover; /* Ensure the image covers the specified dimensions */
+        #quiz-container img {
+            max-width: 300px;
             margin: 10px;
-            border-radius: 10px;
         }
         #quiz-container button {
             margin: 10px;
@@ -35,107 +32,109 @@
     <div id="quiz-container"></div>
     <script>
         const images = [
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg',
-            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg'
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Albania Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'Albania Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'Austria Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg', name: 'Austria Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg', name: 'Belgium Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg', name: 'Belgium Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg', name: 'Croatia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg', name: 'Croatia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg', name: 'Czechia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg', name: 'Czechia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg', name: 'Denmark Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg', name: 'Denmark Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg', name: 'England Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg', name: 'England Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg', name: 'France Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg', name: 'France Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg', name: 'Georgia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg', name: 'Georgia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg', name: 'Germany Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg', name: 'Germany Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg', name: 'Hungary Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg', name: 'Hungary Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg', name: 'Italy Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg', name: 'Italy Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg', name: 'The Netherlands Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg', name: 'The Netherlands Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg', name: 'Poland Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg', name: 'Poland Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg', name: 'Portugal Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg', name: 'Portugal Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg', name: 'Romania Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg', name: 'Romania Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg', name: 'Scotland Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg', name: 'Scotland Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg', name: 'Serbia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg', name: 'Serbia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg', name: 'Slovakia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg', name: 'Slovakia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg', name: 'Slovenia Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg', name: 'Slovenia Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg', name: 'Spain Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg', name: 'Spain Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg', name: 'Switzerland Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg', name: 'Switzerland Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg', name: 'Turkey Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg', name: 'Turkey Away' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg', name: 'Ukraine Home' },
+            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg', name: 'Ukraine Away' }
         ];
 
-        // Function to shuffle an array
+        let currentRound = [];
+        let nextRound = [];
+
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
+            return array;
         }
 
-        let currentRoundImages = images.slice();
-        shuffle(currentRoundImages);  // Shuffle images at the start
-        let nextRoundImages = [];
+        function displayImages() {
+            shuffle(images); // Shuffle images array
+            currentRound = images.slice(); // Copy shuffled images to currentRound
+
+            showImages(); // Display the first set of images
+        }
 
         function showImages() {
-            if (currentRoundImages.length === 1) {
-                showResult();
-                return;
+            const quizContainer = document.getElementById('quiz-container');
+            
+            if (currentRound.length >= 2) {
+                quizContainer.innerHTML = `
+                    <img src="${currentRound[0].src}" alt="Image 1">
+                    <img src="${currentRound[1].src}" alt="Image 2">
+                    <div>
+                        <button onclick="selectImage(0)">Select Image 1</button>
+                        <button onclick="selectImage(1)">Select Image 2</button>
+                    </div>
+                `;
+            } else if (currentRound.length === 1) {
+                const finalImage = currentRound[0];
+                quizContainer.innerHTML = `
+                    <h2>Your Favorite Image:</h2>
+                    <p>${finalImage.name}</p>
+                    <img src="${finalImage.src}" alt="Favorite Image">
+                `;
             }
-
-            if (currentRoundImages.length === 0) {
-                currentRoundImages = nextRoundImages.slice();
-                nextRoundImages = [];
-                shuffle(currentRoundImages);  // Shuffle images at the start of each new round
-            }
-
-            const [img1, img2, ...rest] = currentRoundImages;
-            currentRoundImages = rest;
-
-            document.getElementById('quiz-container').innerHTML = `
-                <img src="${img1}" alt="Image 1" class="quiz-image">
-                <img src="${img2}" alt="Image 2" class="quiz-image">
-                <div>
-                    <button onclick="selectImage('${img1}')">Image 1</button>
-                    <button onclick="selectImage('${img2}')">Image 2</button>
-                </div>
-            `;
         }
 
-        function selectImage(winner) {
-            nextRoundImages.push(winner);
+        function selectImage(index) {
+            nextRound.push(currentRound[index]);
+            currentRound.splice(index, 1);
+
+            if (currentRound.length === 0) {
+                currentRound = nextRound.slice();
+                nextRound = [];
+            }
+
             showImages();
         }
 
-        function showResult() {
-            const favoriteImage = currentRoundImages[0];
-            document.getElementById('quiz-container').innerHTML = `
-                <h2>Your Favorite Image:</h2>
-                <img src="${favoriteImage}" alt="Favorite Image" class="quiz-image">
-            `;
-        }
-
-        showImages();
+        displayImages();
     </script>
 </body>
 </html>
