@@ -82,41 +82,54 @@
             { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg', name: 'Image 48' }
         ];
 
-  // Function to shuffle an array
         function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+            let currentIndex = array.length, temporaryValue, randomIndex;
+
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
             }
+
+            return array;
         }
 
-        let currentRoundImages = images.slice();
-        shuffle(currentRoundImages);  // Shuffle images at the start
-        let nextRoundImages = [];
+        let currentRound = [];
+        let nextRound = [];
 
-        function showImages() {
-            if (currentRoundImages.length === 1) {
-                showResult();
-                return;
+        function startGame() {
+            // Shuffle the images array
+            shuffle(images);
+
+            // Prepare the first round pairs
+            for (let i = 0; i < images.length; i += 2) {
+                currentRound.push([images[i], images[i + 1]]);
             }
 
-            if (currentRoundImages.length === 0) {
-                currentRoundImages = nextRoundImages.slice();
-                nextRoundImages = [];
-                shuffle(currentRoundImages);  // Shuffle images at the start of each new round
-            }
+            showCurrentRound();
+        }
 
-            const [img1, img2, ...rest] = currentRoundImages;
-            currentRoundImages = rest;
+        function showCurrentRound() {
+            const quizContainer = document.getElementById('quiz-container');
+            let roundHTML = '';
 
-            document.getElementById('quiz-container').innerHTML = `
-                <img src="${img1}" alt="Image 1" class="quiz-image">
-                <img src="${img2}" alt="Image 2" class="quiz-image">
-                <div>
-                    <button onclick="selectImage('${img1}')">Image 1</button>
-                    <button onclick="selectImage('${img2}')">Image 2</button>
-                </div>
-            `;
+            currentRound.forEach(pair => {
+                roundHTML += `
+                    <div>
+                        <img src="${pair[0].src}" alt="${pair[0].name}">
+                        <img src="${pair[1].src}" alt="${pair[1].name}">
+                        <div>
+                            <button onclick="selectImage('${pair[0].src}', '${pair[1].src}')">${pair[0].name}</button>
+                            <button onclick="selectImage('${pair[1].src}', '${pair[0].src}')">${pair[1].name}</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            quizContainer.innerHTML = roundHTML;
         }
 
         function selectImage(selectedSrc, eliminatedSrc) {
