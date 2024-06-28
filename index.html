@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Image Preference Quiz</title>
     <style>
         body {
@@ -85,7 +85,8 @@
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg'
         ];
 
-        let currentRoundImages = images.slice(); // Clone the initial images array
+        let currentRoundImages = images.slice();
+        let nextRoundImages = [];
 
         function showImages() {
             if (currentRoundImages.length === 1) {
@@ -93,44 +94,27 @@
                 return;
             }
 
-            const imagePairs = getPairs(currentRoundImages);
-            currentRoundImages = []; // Reset for the next round
-
-            displayPair(imagePairs[0]);
-        }
-
-        function getPairs(array) {
-            const pairs = [];
-            for (let i = 0; i < array.length; i += 2) {
-                if (i + 1 < array.length) {
-                    pairs.push([array[i], array[i + 1]]);
-                } else {
-                    // If there's an odd number of images, the last image automatically advances
-                    currentRoundImages.push(array[i]);
-                }
+            if (currentRoundImages.length === 0) {
+                currentRoundImages = nextRoundImages.slice();
+                nextRoundImages = [];
             }
-            return pairs;
-        }
 
-        function displayPair(pair) {
+            const [img1, img2, ...rest] = currentRoundImages;
+            currentRoundImages = rest;
+
             document.getElementById('quiz-container').innerHTML = `
-                <img src="${pair[0]}" alt="Image 1" class="quiz-image">
-                <img src="${pair[1]}" alt="Image 2" class="quiz-image">
+                <img src="${img1}" alt="Image 1" class="quiz-image">
+                <img src="${img2}" alt="Image 2" class="quiz-image">
                 <div>
-                    <button onclick="selectImage('${pair[0]}')">Image 1</button>
-                    <button onclick="selectImage('${pair[1]}')">Image 2</button>
+                    <button onclick="selectImage('${img1}')">Image 1</button>
+                    <button onclick="selectImage('${img2}')">Image 2</button>
                 </div>
             `;
         }
 
-        function selectImage(selectedImage) {
-            currentRoundImages.push(selectedImage);
-            const remainingPairs = getPairs(currentRoundImages);
-            if (remainingPairs.length === 0) {
-                showImages();
-            } else {
-                displayPair(remainingPairs[0]);
-            }
+        function selectImage(winner) {
+            nextRoundImages.push(winner);
+            showImages();
         }
 
         function showResult() {
