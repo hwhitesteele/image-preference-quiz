@@ -110,48 +110,48 @@
 
         function showCurrentRound() {
             const quizContainer = document.getElementById('quiz-container');
-            let roundHTML = '';
+            quizContainer.innerHTML = ''; // Clear previous content
 
-            // Loop through currentRound to generate HTML for each pair
-            currentRound.forEach((pair, index) => {
-                const img1 = pair[0]; // First image URL in the pair
-                const img2 = pair[1]; // Second image URL in the pair
+            // Display only the current pair
+            const pair = currentRound.shift(); // Get the first pair from currentRound
 
-                // Generate HTML for the pair
-                roundHTML += `
-                    <div class="image-pair">
-                        <img src="${img1}" alt="Image 1">
-                        <img src="${img2}" alt="Image 2">
-                        <div>
-                            <button onclick="selectImage(${index}, 0)">Select Image 1</button>
-                            <button onclick="selectImage(${index}, 1)">Select Image 2</button>
-                        </div>
+            // Generate HTML for the pair
+            const img1 = pair[0];
+            const img2 = pair[1];
+            const pairHTML = `
+                <div class="image-pair">
+                    <img src="${img1}" alt="Image 1">
+                    <img src="${img2}" alt="Image 2">
+                    <div>
+                        <button onclick="selectImage(0)">Select Image 1</button>
+                        <button onclick="selectImage(1)">Select Image 2</button>
                     </div>
-                `;
-            });
+                </div>
+            `;
 
-            // Update the quiz container with the generated HTML
-            quizContainer.innerHTML = roundHTML;
+            quizContainer.innerHTML = pairHTML;
         }
 
-        function selectImage(pairIndex, imageIndex) {
-            const pair = currentRound[pairIndex]; // Get the selected pair
-            const selectedImage = pair[imageIndex]; // Get the selected image URL
-
+        function selectImage(selectedIndex) {
+            const selectedImage = currentRound[selectedIndex];
             nextRound.push(selectedImage); // Add selected image to next round
 
-            currentRound.splice(pairIndex, 1); // Remove the selected pair from currentRound
-
-            if (currentRound.length === 1) {
-                showFinalRound();
+            if (currentRound.length === 0) {
+                if (nextRound.length === 1) {
+                    showFinalRound();
+                } else {
+                    currentRound = nextRound;
+                    nextRound = [];
+                    showCurrentRound();
+                }
             } else {
-                showCurrentRound(); // Show the next round of pairs
+                showCurrentRound(); // Show the next pair
             }
         }
 
         function showFinalRound() {
             const quizContainer = document.getElementById('quiz-container');
-            const finalImage = currentRound[0]; // Get the final remaining image URL
+            const finalImage = nextRound[0]; // Get the final remaining image URL
 
             quizContainer.innerHTML = `
                 <h2>Your Favorite Image:</h2>
