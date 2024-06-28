@@ -34,7 +34,7 @@
 <body>
     <div id="quiz-container"></div>
     <script>
-        const images = [
+        let images = [
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg',
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg',
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg',
@@ -85,38 +85,33 @@
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg'
         ];
 
-        let currentIndex = 0;
-        let imageScores = Array(images.length).fill(0);
-
         function showImages() {
-            if (currentIndex >= images.length - 1) {
+            if (images.length === 1) {
                 showResult();
                 return;
             }
 
+            const [image1, image2] = images.slice(0, 2);
             document.getElementById('quiz-container').innerHTML = `
-                <img src="${images[currentIndex]}" alt="Image 1" class="quiz-image">
-                <img src="${images[currentIndex + 1]}" alt="Image 2" class="quiz-image">
+                <img src="${image1}" alt="Image 1" class="quiz-image">
+                <img src="${image2}" alt="Image 2" class="quiz-image">
                 <div>
-                    <button onclick="selectImage(${currentIndex})">Image 1</button>
-                    <button onclick="selectImage(${currentIndex + 1})">Image 2</button>
+                    <button onclick="selectImage(0)">Image 1</button>
+                    <button onclick="selectImage(1)">Image 2</button>
                 </div>
             `;
         }
 
         function selectImage(index) {
-            imageScores[index]++;
-            currentIndex += 2;
+            images = images.filter((_, i) => i % 2 === index);
             showImages();
         }
 
         function showResult() {
-            const maxScore = Math.max(...imageScores);
-            const favoriteIndex = imageScores.indexOf(maxScore);
-
+            const favoriteImage = images[0];
             document.getElementById('quiz-container').innerHTML = `
                 <h2>Your Favorite Image:</h2>
-                <img src="${images[favoriteIndex]}" alt="Favorite Image" class="quiz-image">
+                <img src="${favoriteImage}" alt="Favorite Image" class="quiz-image">
             `;
         }
 
