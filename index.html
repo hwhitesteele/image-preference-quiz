@@ -142,11 +142,25 @@
                 } else {
                     currentRound = nextRound;
                     nextRound = [];
+                    prepareNextRound();
                     showCurrentRound();
                 }
             } else {
                 showCurrentRound(); // Show the next pair
             }
+        }
+
+        function prepareNextRound() {
+            nextRound = [];
+            for (let i = 0; i < currentRound.length; i += 2) {
+                nextRound.push(selectPreferredImage(currentRound[i], currentRound[i + 1]));
+            }
+        }
+
+        function selectPreferredImage(img1, img2) {
+            // Simulate a random selection
+            const randomIndex = Math.floor(Math.random() * 2);
+            return randomIndex === 0 ? img1 : img2;
         }
 
         function showFinalRound() {
