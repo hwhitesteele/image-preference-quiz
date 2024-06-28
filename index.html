@@ -112,22 +112,28 @@
             showCurrentRound();
         }
 
-        function showCurrentRound() {
-            const quizContainer = document.getElementById('quiz-container');
-            let roundHTML = '';
+       function showCurrentRound() {
+    const quizContainer = document.getElementById('quiz-container');
+    let roundHTML = '';
 
-            currentRound.forEach(pair => {
-                roundHTML += `
-                    <div>
-                        <img src="${pair[0].src}" alt="${pair[0].name}">
-                        <img src="${pair[1].src}" alt="${pair[1].name}">
-                        <div>
-                            <button onclick="selectImage('${pair[0].src}', '${pair[1].src}')">${pair[0].name}</button>
-                            <button onclick="selectImage('${pair[1].src}', '${pair[0].src}')">${pair[1].name}</button>
-                        </div>
-                    </div>
-                `;
-            });
+    // Loop through currentRound to generate HTML for each pair
+    for (let i = 0; i < currentRound.length; i++) {
+        const pair = currentRound[i]; // Get the current pair of images
+        const img1 = pair[0]; // First image URL in the pair
+        const img2 = pair[1]; // Second image URL in the pair
+
+        // Generate HTML for the pair
+        roundHTML += `
+            <div class="image-pair">
+                <img src="${img1}" alt="Image 1">
+                <img src="${img2}" alt="Image 2">
+                <div>
+                    <button onclick="selectImage(0)">Select Image 1</button>
+                    <button onclick="selectImage(1)">Select Image 2</button>
+                </div>
+            </div>
+        `;
+    }
 
             quizContainer.innerHTML = roundHTML;
         }
