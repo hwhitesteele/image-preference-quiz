@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Preference Quiz</title>
     <style>
         body {
@@ -18,8 +18,8 @@
             text-align: center;
         }
         .quiz-image {
-            width: 400px; /* Set a fixed width for all images */
-            height: 400px; /* Set a fixed height for all images */
+            width: 300px; /* Set a fixed width for all images */
+            height: 300px; /* Set a fixed height for all images */
             object-fit: cover; /* Ensure the image covers the specified dimensions */
             margin: 10px;
             border-radius: 10px;
@@ -85,7 +85,16 @@
             'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg'
         ];
 
+        // Function to shuffle an array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
         let currentRoundImages = images.slice();
+        shuffle(currentRoundImages);  // Shuffle images at the start
         let nextRoundImages = [];
 
         function showImages() {
@@ -97,6 +106,7 @@
             if (currentRoundImages.length === 0) {
                 currentRoundImages = nextRoundImages.slice();
                 nextRoundImages = [];
+                shuffle(currentRoundImages);  // Shuffle images at the start of each new round
             }
 
             const [img1, img2, ...rest] = currentRoundImages;
