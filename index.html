@@ -113,7 +113,7 @@
             quizContainer.innerHTML = ''; // Clear previous content
 
             // Display only the current pair
-            if (currentRound.length > 0) {
+            if (currentRound.length > 1) {
                 const pair = currentRound.shift(); // Get the first pair from currentRound
 
                 // Generate HTML for the pair
@@ -131,6 +131,24 @@
                 `;
 
                 quizContainer.innerHTML = pairHTML;
+            } else if (currentRound.length === 1) {
+                const lastPair = currentRound.shift(); // Get the last pair from currentRound
+
+                // Generate HTML for the last pair
+                const img1 = lastPair[0];
+                const img2 = lastPair[1];
+                const lastPairHTML = `
+                    <div class="image-pair">
+                        <img src="${img1}" alt="Image 1">
+                        <img src="${img2}" alt="Image 2">
+                        <div>
+                            <button onclick="selectFinalImage(0)">Select Image 1</button>
+                            <button onclick="selectFinalImage(1)">Select Image 2</button>
+                        </div>
+                    </div>
+                `;
+
+                quizContainer.innerHTML = lastPairHTML;
             } else {
                 showFinalRound();
             }
@@ -141,43 +159,33 @@
             nextRound.push(selectedImage); // Add selected image to next round
 
             if (currentRound.length === 0) {
-                if (nextRound.length === 1) {
-                    showFinalRound();
-                } else {
-                    currentRound = nextRound;
-                    nextRound = [];
-                    prepareNextRound();
-                    showCurrentRound();
-                }
+                currentRound = nextRound;
+                nextRound = [];
+                showCurrentRound();
             } else {
                 showCurrentRound(); // Show the next pair
             }
         }
 
-        function prepareNextRound() {
-            nextRound = [];
-            for (let i = 0; i < currentRound.length; i += 2) {
-                nextRound.push(selectPreferredImage(currentRound[i], currentRound[i + 1]));
-            }
-        }
+        function selectFinalImage(selectedIndex) {
+            const finalImage = currentRound[selectedIndex];
 
-        function selectPreferredImage(img1, img2) {
-            // Simulate a random selection
-            const randomIndex = Math.floor(Math.random() * 2);
-            return randomIndex === 0 ? img1 : img2;
-        }
-
-        function showFinalRound() {
             const quizContainer = document.getElementById('quiz-container');
-            const finalImage = nextRound[0]; // Get the final remaining image URL
-
             quizContainer.innerHTML = `
                 <h2>Your Favorite Image:</h2>
                 <img src="${finalImage}" alt="Favorite Image">
+                <p>Image Name: ${getImageName(finalImage)}</p>
             `;
         }
 
-        window.onload = startGame;
+        function getImageName(imageUrl) {
+            // Example function to get image name from URL
+            const splitUrl = imageUrl.split('/');
+            const imageName = splitUrl[splitUrl.length - 1].split('.')[0]; // Extracts filename without extension
+            return imageName;
+        }
+
+        startGame(); // Start the game initially
     </script>
 </body>
 </html>
