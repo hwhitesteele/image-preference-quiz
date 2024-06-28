@@ -113,23 +113,27 @@
             quizContainer.innerHTML = ''; // Clear previous content
 
             // Display only the current pair
-            const pair = currentRound.shift(); // Get the first pair from currentRound
+            if (currentRound.length > 0) {
+                const pair = currentRound.shift(); // Get the first pair from currentRound
 
-            // Generate HTML for the pair
-            const img1 = pair[0];
-            const img2 = pair[1];
-            const pairHTML = `
-                <div class="image-pair">
-                    <img src="${img1}" alt="Image 1">
-                    <img src="${img2}" alt="Image 2">
-                    <div>
-                        <button onclick="selectImage(0)">Select Image 1</button>
-                        <button onclick="selectImage(1)">Select Image 2</button>
+                // Generate HTML for the pair
+                const img1 = pair[0];
+                const img2 = pair[1];
+                const pairHTML = `
+                    <div class="image-pair">
+                        <img src="${img1}" alt="Image 1">
+                        <img src="${img2}" alt="Image 2">
+                        <div>
+                            <button onclick="selectImage(0)">Select Image 1</button>
+                            <button onclick="selectImage(1)">Select Image 2</button>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
 
-            quizContainer.innerHTML = pairHTML;
+                quizContainer.innerHTML = pairHTML;
+            } else {
+                showFinalRound();
+            }
         }
 
         function selectImage(selectedIndex) {
@@ -170,7 +174,6 @@
             quizContainer.innerHTML = `
                 <h2>Your Favorite Image:</h2>
                 <img src="${finalImage}" alt="Favorite Image">
-                <p>${finalImage}</p>
             `;
         }
 
