@@ -17,11 +17,14 @@
         #quiz-container {
             text-align: center;
         }
-        #quiz-container img {
+        .image-pair {
+            margin-bottom: 20px;
+        }
+        .image-pair img {
             max-width: 300px;
             margin: 10px;
         }
-        #quiz-container button {
+        .image-pair button {
             margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
@@ -32,73 +35,66 @@
     <div id="quiz-container"></div>
     <script>
         const images = [
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg', name: 'Image 1' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg', name: 'Image 2' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg', name: 'Image 3' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg', name: 'Image 4' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg', name: 'Image 5' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg', name: 'Image 6' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg', name: 'Image 7' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg', name: 'Image 8' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg', name: 'Image 9' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg', name: 'Image 10' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg', name: 'Image 11' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg', name: 'Image 12' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg', name: 'Image 13' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg', name: 'Image 14' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg', name: 'Image 15' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg', name: 'Image 16' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg', name: 'Image 17' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg', name: 'Image 18' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg', name: 'Image 19' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg', name: 'Image 20' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg', name: 'Image 21' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg', name: 'Image 22' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg', name: 'Image 23' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg', name: 'Image 24' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg', name: 'Image 25' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg', name: 'Image 26' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg', name: 'Image 27' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg', name: 'Image 28' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg', name: 'Image 29' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg', name: 'Image 30' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg', name: 'Image 31' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg', name: 'Image 32' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg', name: 'Image 33' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg', name: 'Image 34' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg', name: 'Image 35' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg', name: 'Image 36' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg', name: 'Image 37' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg', name: 'Image 38' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg', name: 'Image 39' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg', name: 'Image 40' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg', name: 'Image 41' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg', name: 'Image 42' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg', name: 'Image 43' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg', name: 'Image 44' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg', name: 'Image 45' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg', name: 'Image 46' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg', name: 'Image 47' },
-            { src: 'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg', name: 'Image 48' }
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image1.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image2.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image3.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image4.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image5.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image6.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image7.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image8.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image9.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image10.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image11.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image12.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image13.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image14.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image15.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image16.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image17.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image18.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image19.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image20.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image21.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image22.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image23.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image24.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image25.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image26.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image27.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image28.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image29.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image30.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image31.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image32.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image33.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image34.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image35.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image36.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image37.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image38.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image39.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image40.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image41.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image42.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image43.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image44.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image45.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image46.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image47.jpg',
+            'https://raw.githubusercontent.com/hwhitesteele/image-preference-quiz/main/images/image48.jpg'
         ];
-
-        function shuffle(array) {
-            let currentIndex = array.length, temporaryValue, randomIndex;
-
-            while (currentIndex !== 0) {
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex -= 1;
-
-                temporaryValue = array[currentIndex];
-                array[currentIndex] = array[randomIndex];
-                array[randomIndex] = temporaryValue;
-            }
-
-            return array;
-        }
 
         let currentRound = [];
         let nextRound = [];
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
         function startGame() {
             // Shuffle the images array
@@ -112,54 +108,59 @@
             showCurrentRound();
         }
 
-       function showCurrentRound() {
-    const quizContainer = document.getElementById('quiz-container');
-    let roundHTML = '';
+        function showCurrentRound() {
+            const quizContainer = document.getElementById('quiz-container');
+            let roundHTML = '';
 
-    // Loop through currentRound to generate HTML for each pair
-    for (let i = 0; i < currentRound.length; i++) {
-        const pair = currentRound[i]; // Get the current pair of images
-        const img1 = pair[0]; // First image URL in the pair
-        const img2 = pair[1]; // Second image URL in the pair
+            // Loop through currentRound to generate HTML for each pair
+            currentRound.forEach((pair, index) => {
+                const img1 = pair[0]; // First image URL in the pair
+                const img2 = pair[1]; // Second image URL in the pair
 
-        // Generate HTML for the pair
-        roundHTML += `
-            <div class="image-pair">
-                <img src="${img1}" alt="Image 1">
-                <img src="${img2}" alt="Image 2">
-                <div>
-                    <button onclick="selectImage(0)">Select Image 1</button>
-                    <button onclick="selectImage(1)">Select Image 2</button>
-                </div>
-            </div>
-        `;
-    }
+                // Generate HTML for the pair
+                roundHTML += `
+                    <div class="image-pair">
+                        <img src="${img1}" alt="Image 1">
+                        <img src="${img2}" alt="Image 2">
+                        <div>
+                            <button onclick="selectImage(${index}, 0)">Select Image 1</button>
+                            <button onclick="selectImage(${index}, 1)">Select Image 2</button>
+                        </div>
+                    </div>
+                `;
+            });
 
+            // Update the quiz container with the generated HTML
             quizContainer.innerHTML = roundHTML;
         }
 
-        function selectImage(selectedSrc, eliminatedSrc) {
-            nextRound.push(selectedSrc);
-            currentRound = nextRound.filter(image => image.src === selectedSrc || image.src === eliminatedSrc);
-            nextRound = [];
+        function selectImage(pairIndex, imageIndex) {
+            const pair = currentRound[pairIndex]; // Get the selected pair
+            const selectedImage = pair[imageIndex]; // Get the selected image URL
+
+            nextRound.push(selectedImage); // Add selected image to next round
+
+            currentRound.splice(pairIndex, 1); // Remove the selected pair from currentRound
 
             if (currentRound.length === 1) {
-                showFinalImage(currentRound[0]);
+                showFinalRound();
             } else {
-                showCurrentRound();
+                showCurrentRound(); // Show the next round of pairs
             }
         }
 
-        function showFinalImage(finalImage) {
+        function showFinalRound() {
             const quizContainer = document.getElementById('quiz-container');
+            const finalImage = currentRound[0]; // Get the final remaining image URL
+
             quizContainer.innerHTML = `
                 <h2>Your Favorite Image:</h2>
-                <p>${finalImage.name}</p>
-                <img src="${finalImage.src}" alt="${finalImage.name}">
+                <img src="${finalImage}" alt="Favorite Image">
+                <p>${finalImage}</p>
             `;
         }
 
-        startGame();
+        window.onload = startGame;
     </script>
 </body>
 </html>
