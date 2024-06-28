@@ -112,11 +112,11 @@
 
         function showResult() {
             const maxScore = Math.max(...imageScores);
-            const favoriteImages = images.filter((_, index) => imageScores[index] === maxScore);
+            const favoriteIndex = imageScores.indexOf(maxScore);
 
             document.getElementById('quiz-container').innerHTML = `
-                <h2>Your Favorite Image(s):</h2>
-                ${favoriteImages.map(src => `<img src="${src}" alt="Favorite Image" class="quiz-image">`).join('')}
+                <h2>Your Favorite Image:</h2>
+                <img src="${images[favoriteIndex]}" alt="Favorite Image" class="quiz-image">
             `;
         }
 
